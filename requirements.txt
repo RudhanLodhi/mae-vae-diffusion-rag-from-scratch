@@ -1,0 +1,7 @@
+torch
+transformers
+datasets
+diffusers
+rouge-score
+matplotlib
+pillow
