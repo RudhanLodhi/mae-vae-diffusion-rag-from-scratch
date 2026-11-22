@@ -21,7 +21,8 @@ Four generative models from scratch, unified in one web application.
 
 ```text
 .
-├── scripts/             # data loaders and visualization helpers 
+├── data/                # Local datasets (e.g. data/uhat/; gitignored, not pushed)
+├── scripts/             # Data loaders and visualization helpers (scripts only)
 │   ├── eurosat.py       # EuroSAT RGB loader, few-label indices, patchify/unpatchify
 │   ├── uhat.py          # UHaT character loader (28x28 white-on-black)
 │   ├── bioasq.py        # BioASQ corpus and question-answer-passages loaders
@@ -51,7 +52,8 @@ pip install -r requirements.txt
 ### 2. Datasets
 
 - **EuroSAT** and **BioASQ** download automatically from Hugging Face on first run.
-- **UHaT**: Download `data.zip` from [Zenodo](https://zenodo.org/records/3670611) (or [Kaggle](https://www.kaggle.com/datasets/hazrat/uhat-urdu-handwritten-text-dataset)) and unzip it into `scripts/data/uhat/`.
+- **UHaT**: Download `data.zip` from [Zenodo](https://zenodo.org/records/3670611) (or [Kaggle](https://www.kaggle.com/datasets/hazrat/uhat-urdu-handwritten-text-dataset)) and unzip it into `data/uhat/` at the repository root.
+- Note: `data/` is listed in `.gitignore` so local datasets are not committed or pushed to GitHub.
 
 ### 3. Verify Starter Code (Task 0)
 

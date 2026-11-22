@@ -6,6 +6,7 @@ import torch
 from PIL import Image
 
 IMG_EXT = {".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff"}
+DEFAULT_ROOT = Path(__file__).resolve().parent.parent / "data" / "uhat"
 
 
 def _find_split_dir(root, kind, split):
@@ -20,7 +21,7 @@ def _find_split_dir(root, kind, split):
     raise FileNotFoundError(f"No '{kind}'/'{split}' folder under {root}. Folders seen: {found}")
 
 
-def load_uhat_characters(root="data/uhat", split="train", class_names=None):
+def load_uhat_characters(root=DEFAULT_ROOT, split="train", class_names=None):
     """Returns images (N, 1, 28, 28) float32 in [0, 1] with WHITE strokes on a
     BLACK background, labels (N,) int64, and the list of class names.
     Pass the training class_names when loading 'test' so labels match."""
